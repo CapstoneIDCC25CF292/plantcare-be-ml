@@ -176,16 +176,11 @@ exports.predictImage = async (req, res) => {
       imageBuffer
     );
 
-    // res.json({
-    //   message: "Successfully predict plants",
-    //   data: { id: savedData.id },
-    // });
-
     res.json({
       message: "Successfully predict plants",
-      data: predictionData,
-      imgTensor: imgTensor
+      data: { id: savedData.id },
     });
+    
   } catch (err) {
     console.log(err);
     res.status(500).send("Error during prediction.", err);
